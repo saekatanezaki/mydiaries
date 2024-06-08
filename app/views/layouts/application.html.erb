@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>your journey</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__bar row">
+        <h1 class="grid-6"><a href="/">What are your thoughts?</a></h1>
+        <div class="user_nav grid-6">
+          <a class="post" href="/diaries/new">POST</a>
+        </div>
+      </div>
+    </header>
+    <%= yield %>
+    <footer>
+      <p>
+        2024 Bloom where you are planted
+      </p>
+    </footer>
+  </body>
+</html>

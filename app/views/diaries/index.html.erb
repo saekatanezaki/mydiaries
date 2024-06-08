@@ -1,0 +1,25 @@
+<div class="contents row">
+  <% @diaries.each do |diary| %>
+    <div class="content_post" style="background-image: url('<%= diary.image %>');">
+    <div class="more">
+        <span><%= image_tag 'arrow_top.png' %></span>
+        <ul class="more_list">
+          <li>
+            <%= link_to 'DELETE', diary_path(diary), data: { turbo_method: :delete, confirm: 'Are you sure?' } %>
+          </li>
+        </ul>
+      </div>
+      <span class="date">
+        <%= diary.date %>
+      </span>
+      <span class="title">
+        <%= diary.title %>
+      </span> 
+      <!--
+      <span class="content">
+        <%= diary.content %>
+      </span>
+      -->
+    </div>
+  <% end %>
+</div>
