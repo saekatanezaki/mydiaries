@@ -4,7 +4,7 @@
     <%= form_with(model: @diary, local: true) do |form| %>
        <%= simple_calendar_select(form, :date, placeholder: "Date") %>
       <%= form.text_field :title, placeholder: "Title" %>
-      <%= form.text_field :image, placeholder: "Image Url" %>
+      <%= form.file_field :image, placeholder: "Upload Image" %>
       <%= form.text_area :content, placeholder: "content", rows: "10" %>
       <%= form.submit "SEND" %>
     <% end %>

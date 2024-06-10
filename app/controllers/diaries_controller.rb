@@ -11,8 +11,8 @@ class DiariesController < ApplicationController
   end
 
   def create
-    Diary.create(diary_params)
-    if @item.save
+    @diary = Diary.new(diary_params)
+    @diary.save
     redirect_to root_path
   end
 
@@ -23,6 +23,7 @@ class DiariesController < ApplicationController
   end
 
   private
+
   def diary_params
     params.require(:diary).permit(:date, :image, :title, :content)
   end
@@ -30,5 +31,4 @@ class DiariesController < ApplicationController
   def set_selected_date
     @selected_date = Date.parse(params[:selected_date])
   end
-
 end
