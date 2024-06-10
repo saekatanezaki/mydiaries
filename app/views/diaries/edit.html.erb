@@ -1,0 +1,11 @@
+<div class="contents row">
+  <div class="container">
+    <h3>EDIT</h3>
+    <%= form_with(model: @diary, local: true) do |form| %>
+      <%= form.text_field :date, placeholder: "Date" %>
+      <%= form.text_field :title, placeholder: "Title" %>
+      <%= form.text_area :content, placeholder: "content", rows: "10" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+  </div>
+</div>

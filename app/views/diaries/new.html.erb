@@ -5,7 +5,7 @@
        <%= simple_calendar_select(form, :date, placeholder: "Date") %>
       <%= form.text_field :title, placeholder: "Title" %>
       <%= form.file_field :image, placeholder: "Upload Image" %>
-      <%= form.text_area :content, placeholder: "content", rows: "10" %>
+      <%= form.text_area :content, placeholder: "content", rows: "10", style: "white-space: pre-line;" %>
       <%= form.submit "SEND" %>
     <% end %>
   </div>

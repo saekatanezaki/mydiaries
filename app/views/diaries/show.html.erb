@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日記の詳細</title>
+  <link rel="stylesheet" href="/stylesheets/diary.css">
+  <style>
+    .diary-detail {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="content_post_diary">
+    </div>
+    <div class="diary-detail">
+      <h1><%= @diary.title %></h1>
+      <p class="date"><%= @diary.date.strftime("%Y年%m月%d日") %></p>
+      <% if @diary.image.attached? %>
+        <div class="content_post" style="background-image: url(<%= @diary.image %>);">
+        
+          <%= image_tag @diary.image %>
+        </div>
+      <% end %>
+      <div class="diary-content">
+         <%= simple_format(@diary.content) %>
+      </div>
+      
+      <a class="back-link" href="<%= root_path %>">BACK</a>
+      <ul class="more_list">
+        <li>
+          <%= link_to 'EDIT', edit_diary_path(@diary.id) %>
+        </li>
+        <li>
+          <%= link_to 'DELETE', diary_path(@diary.id), data: { turbo_method: :delete } %>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+</body>
+</html>
+
+
+

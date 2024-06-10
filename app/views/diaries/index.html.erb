@@ -19,6 +19,12 @@
       
         <ul class="more_list">
           <li>
+            <%= link_to 'Go to your diary', diary_path(diary.id) %>
+          </li>
+          <li>
+            <%= link_to 'Edit', edit_diary_path(diary.id) %>
+          </li>
+          <li>
             <%= link_to 'Delete', "/diaries/#{diary.id}", data: { turbo_method: :delete } %>
           </li>
         </ul>
